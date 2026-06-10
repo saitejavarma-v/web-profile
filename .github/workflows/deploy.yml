@@ -35,6 +35,11 @@ jobs:
 
       - name: Build Application
         run: npm run build
+      - name: Run Trivy Scan
+        uses: aquasecurity/trivy-action@master
+        with:
+        scan-type: fs
+        scan-ref: .
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
