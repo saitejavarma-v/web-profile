@@ -40,6 +40,8 @@ jobs:
         with:
           scan-type: fs
           scan-ref: .
+      - name: Build Docker Image
+        run: docker build -t web-profile .
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
